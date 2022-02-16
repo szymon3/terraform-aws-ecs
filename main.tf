@@ -22,4 +22,10 @@ resource "aws_ecs_cluster" "this" {
   }
 
   tags = var.tags
+  
+  lifecycle {
+    ignore_changes = [
+      setting,
+    ]
+  }
 }
